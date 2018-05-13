@@ -1,0 +1,110 @@
+<div class="container">
+        <div class="row">
+           
+            <div class="col-md-6 col-sm-12 col-xs-12">
+               <h5>View By:
+                <select [(ngModel)]="view" >
+                    <option value=""  [selected]="" style="color: black">All</option>
+                    <option value="characters" style="color: black">Characters</option>
+                    <option value="houses" style="color: black">Houses</option>
+                    <option value="books" style="color: black">Books</option>
+                </select>
+            </h5> 
+            </div>
+        </div>
+    
+    
+        <div class="row" *ngIf="allbookdata.length>0">
+            <div *ngFor="let data of allData |select:view |sort " class="col-lg-4 col-md-6 ">
+    
+    
+    
+    
+                <div *ngIf="data.isbn">
+                    <div class="card cardd">
+                        <div class="card-body">
+                            <img class="card-img-top img-thumbnai " src="./assets/books.jpg" height="200px" alt="Card image cap">
+                            <h5 class="card-title" style="text-align: center;">Books</h5>
+                            <ul class="list-group list-group-flush">
+                                <li class="list-group-item">
+                                    <h5 class="card-title">Book Name: {{data.name}}</h5>
+                                </li>
+                                <li class="list-group-item">
+                                    <h5>Authors: {{data.authors }}</h5>
+                                </li>
+                                <li class="list-group-item">
+                                    <h5>Publisher: {{data.publisher}}</h5>
+                                </li>
+                                <li class="list-group-item">
+                                    <h5>Released: {{data.released | date}}</h5>
+                                </li>
+                            </ul>
+                            <a [routerLink]="['/book',data.url.split('/').pop()]" class="btn btn-primary">Knoe More</a>
+                        </div>
+                    </div>
+                </div>
+    
+    
+                <div *ngIf="data.gender">
+                    <div class="card cardd">
+                        <div class="card-body">
+                            <img class="card-img-top img-thumbnai " src="./assets/character.png" height="200px" alt="Card image cap">
+                            <h5 class="card-title" style="text-align: center;">Character</h5>
+                            <ul class="list-group list-group-flush">
+                                <li class="list-group-item">
+                                    <h5 class="card-title">Alises Name: {{data.aliases}}</h5>
+                                </li>
+                                <li class="list-group-item">
+                                    <h5>Character name:
+                                        <span *ngIf="data.name; then ifblock else elseblock"></span>
+                                        <hr>
+                                        <ng-template #ifblock>{{data.name}}</ng-template>
+                                        <ng-template #elseblock>Not Available</ng-template>
+                                    </h5>
+                                </li>
+                                <li class="list-group-item">
+                                    <h5>Gender: {{data.gender}}</h5>
+                                </li>
+                            </ul>
+                            <a [routerLink]="['/character',data.url.split('/').pop()]" class="btn btn-primary">Know More</a>
+                        </div>
+                    </div>
+                </div>
+    
+    
+                <div *ngIf="data.region || data.coatOfArms">
+                    <div class="card cardd">
+                        <div class="card-body">
+                            <img class="card-img-top img-thumbnai " src="./assets/house.jpg" height="200px" alt="Card image cap">
+                            <h5 class="card-title" style="text-align: center;">House</h5>
+                            <ul class="list-group list-group-flush">
+                                <li class="list-group-item">
+                                    <h5 class="card-title">House name: {{data.name}}</h5>
+                                </li>
+    
+                                <li class="list-group-item">
+                                    <h5>Region: {{data.region}}</h5>
+                                </li>
+                            </ul>
+                            <a [routerLink]="['/house',data.url.split('/').pop()]" class="btn btn-primary">Know More</a>
+                        </div>
+                    </div>
+                </div>
+    
+    
+    
+    
+    
+            </div>
+        </div>
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    </div>

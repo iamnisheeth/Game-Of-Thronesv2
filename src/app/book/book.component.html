@@ -1,0 +1,75 @@
+<div class="container">
+  <div class="row" *ngIf="currentData">
+    <div class="col-12">
+
+        <div class="col-md-12"><a href="#" ><button class="btn btn-warning" >Go back</button></a></div>
+
+      <div class="card  cardd ">
+
+        
+        <div class="card-body" *ngIf="currentData.name">
+            <h5 class="card-header head">Name of Books</h5>
+          <h5 class="card-title">{{currentData.name}}</h5>
+
+        </div>
+
+       
+        <div class="card-body " *ngIf="currentData.isbn">
+            <h5 class="card-header head">ISBN</h5>
+          <h5 class="card-title">{{currentData.isbn}}</h5>
+
+        </div>
+       
+
+        <div class="card-body" *ngIf="currentData.authors?.length>0">
+        <h5 class="card-header head">Authors</h5>
+        <div class="card-body" *ngFor="let i of  currentData.authors">
+          <h5 class="card-title">{{i}}</h5>
+
+        </div>
+        </div>
+
+
+       
+        <div class="card-body" *ngIf="currentData.numberOfPages">
+            <h5 class="card-header head">Number of pages</h5>
+          <h5 class="card-title">{{currentData.numberOfPages
+          }}</h5>
+
+        </div>
+       
+        <div class="card-body" *ngIf="currentData.publisher">
+            <h5 class="card-header head">Publishers</h5>
+          <h5 class="card-title">{{currentData.publisher}}</h5>
+
+        </div>
+
+        
+        <div class="card-body" *ngIf="currentData.released">
+            <h5 class="card-header head">Released Date</h5>
+          <h5 class="card-title">{{currentData.released | date}}</h5>
+
+        </div>
+
+       
+        <div class="card-body" *ngIf="currentData.Country">
+            <h5 class="card-header head">Country</h5>
+          <h5 class="card-title">{{currentData.country}}</h5>
+
+        </div>
+       <div class="card-body" *ngIf="currentData.characters?.length>0">
+        <h5 class="card-header head">characters</h5>
+        <div class="card-body" *ngFor="let i of  currentData.characters">
+          <h5 class="card-title">{{i}}</h5>
+
+        </div>
+      </div>
+
+
+
+
+      </div>
+
+    </div>
+  </div>
+</div>

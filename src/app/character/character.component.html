@@ -1,0 +1,165 @@
+
+<div class="container">
+  <div class="row" *ngIf="currentData">
+      <div class="col-12">
+            <div class="col-md-12"><a href="#" ><button class="btn btn-warning" >Go back</button></a></div>
+
+          <div class="card cardd">
+
+
+                  
+                  <div class="card-body" *ngIf="currentData.name">
+  
+                      <span *ngIf="currentData.name; then ifblock"></span>
+                      <ng-template #ifblock>
+                            <h5 class="card-header head ">Name of character</h5>
+                              <h5 class="card-title">{{currentData.name}}</h5>
+                          
+                      </ng-template>
+                     
+                   </div>
+
+
+
+
+                 
+                  <div class="card-body" *ngIf="currentData.gender">
+  
+                     <span *ngIf="currentData.gender; then ifblock"></span>
+                      <ng-template #ifblock>
+                            <h5 class="card-header head ">Gender</h5>
+                              <h5 class="card-title">{{currentData.gender}}</h5>
+                          
+                      </ng-template>
+                
+  
+                  </div>
+
+            
+              
+              
+            
+
+              <div class="card-body" *ngIf="currentData.titles?.length>0">
+                   
+                  <span *ngIf="currentData.titles[0]; then ifblock"></span>
+                  <ng-template #ifblock>
+                      <h5 class="card-header head ">titles</h5>
+                      <div *ngFor="let i of  currentData.titles">
+                          <h5 class="card-title">{{i}}</h5>
+                      </div>
+                  </ng-template>
+               
+               
+        
+              </div>
+             
+           
+
+              <div class="card-body" *ngIf="currentData.aliases?.length>0">
+    
+                  <span *ngIf="currentData.aliases[0]; then ifblock"></span>
+                  <ng-template #ifblock>
+                      <h5 class="card-header head ">aliases</h5>
+                      <div *ngFor="let i of  currentData.aliases">
+                          <h5 class="card-title">{{i}}</h5>
+                      </div>
+                  </ng-template>
+                
+                 
+        
+              </div>
+             
+             
+             
+            
+            
+
+              <div class="card-body" *ngIf="currentData.books?.length>0">
+                    
+                  <span *ngIf="currentData.books[0]; then ifblock"></span>
+                  <ng-template #ifblock>
+                      <h5 class="card-header head ">books</h5>
+                      <div *ngFor="let i of  currentData.books">
+                          <h5 class="card-title">{{i}}</h5>
+                      </div>
+                  </ng-template>
+                
+            
+        
+              </div>
+
+          
+                
+              
+ 
+              <div class="card-body" *ngIf="currentData.allegiances?.length>0">
+                   
+                  <span *ngIf="currentData.allegiances[0]; then ifblock"></span>
+                  <ng-template #ifblock>
+                      <h5 class="card-header head ">allegiances</h5>
+                      <div *ngFor="let i of  currentData.allegiances">
+                          <h5 class="card-title">{{i}}</h5>
+                      </div>
+                  </ng-template>
+                
+                 
+        
+              </div>
+
+             
+             
+
+              <div class="card-body">
+                    <div *ngIf="currentData.tvSeries?.length>0"> 
+                  <span *ngIf="currentData.tvSeries[0]; then ifblock"></span>
+                  <ng-template #ifblock>
+                      <h5 class="card-header head ">tvSeries</h5>
+                      <div *ngFor="let i of  currentData.tvSeries">
+                          <h5 class="card-title">{{i}}</h5>
+                      </div>
+                  </ng-template>
+                
+                  </div>
+        
+              </div>
+              
+                
+            
+
+        
+
+              <div class="card-body">
+                    <div *ngIf="currentData.playedBy?.length>0"> 
+                  <span *ngIf="currentData.playedBy[0]; then ifblock"></span>
+                  <ng-template #ifblock>
+                      <h5 class="card-header head ">playedBy</h5>
+                      <div *ngFor="let i of  currentData.playedBy">
+                          <h5 class="card-title">{{i}}</h5>
+                      </div>
+                  </ng-template>
+                
+                  </div>
+        
+              </div>
+
+
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+          </div>
+
+      </div>
+  </div>
+</div>

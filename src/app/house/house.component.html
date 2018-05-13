@@ -1,0 +1,212 @@
+<div class="container">
+  <div class="row" *ngIf="currentData">
+    <div class="col-12">
+        <div class="col-md-12"><a href="#" ><button class="btn btn-warning" >Go back</button></a></div>
+
+      <div class="card cardd ">
+
+
+
+
+
+
+        <div *ngIf="currentData.name">
+          <h5 class="card-header head ">Name of House </h5>
+          <div class="card-body">
+
+            <h5 class="card-title">{{currentData.name}}</h5>
+
+          </div>
+        </div>
+
+
+        <div *ngIf="currentData.region">
+          <h5 class="card-header head ">Regions </h5>
+          <div class="card-body">
+
+            <h5 class="card-title">{{currentData.region}}</h5>
+
+          </div>
+        </div>
+
+        <div *ngIf="currentData.overlord">
+          <h5 class="card-header head ">Over Lord </h5>
+          <div class="card-body">
+
+            <h5 class="card-title">{{currentData.overlord}}</h5>
+
+          </div>
+        </div>
+
+        <div *ngIf="currentData.words
+        ">
+          <h5 class="card-header head ">words
+          </h5>
+          <div class="card-body">
+
+            <h5 class="card-title">{{currentData.words }}
+            </h5>
+
+          </div>
+        </div>
+        <div *ngIf="currentData.coatOfArms">
+          <h5 class="card-header head ">Coat of arms </h5>
+          <div class="card-body">
+
+            <h5 class="card-title">{{currentData.coatOfArms}}</h5>
+
+          </div>
+        </div>
+
+        <div *ngIf="currentData.currentLord">
+          <h5 class="card-header head ">current Lord </h5>
+          <div class="card-body">
+
+            <h5 class="card-title">{{currentData.currentLord}}</h5>
+
+          </div>
+        </div>
+
+
+        <div *ngIf="currentData.founded
+                ">
+          <h5 class="card-header head ">founded
+          </h5>
+          <div class="card-body">
+
+            <h5 class="card-title">{{currentData.founded }}
+            </h5>
+
+          </div>
+        </div>
+
+
+        <div *ngIf="currentData.founder
+
+                ">
+          <h5 class="card-header head ">founder
+
+          </h5>
+          <div class="card-body">
+
+            <h5 class="card-title">{{currentData.founder }}
+
+            </h5>
+
+          </div>
+        </div>
+
+
+        <div *ngIf="currentData.heir
+
+                ">
+          <h5 class="card-header head ">heir
+
+          </h5>
+          <div class="card-body">
+
+            <h5 class="card-title">{{currentData.heir }}
+
+            </h5>
+
+          </div>
+        </div>
+
+       
+        <div class="card-body">
+            <div *ngIf="currentData.cadetBranches?.length>0"> 
+          <span *ngIf="currentData.cadetBranches[0]; then ifblock"></span>
+          <hr>
+          <ng-template #ifblock>
+              <h5 class="card-header head ">cadetBranches</h5>
+              <div *ngFor="let i of  currentData.cadetBranchess">
+                  <h5 class="card-title">{{i}}</h5>
+              </div>
+          </ng-template>
+        
+          </div>
+
+      </div>
+
+
+       
+        <div class="card-body">
+            <div *ngIf="currentData.titles?.length>0"> 
+          <span *ngIf="currentData.titles[0]; then ifblock"></span>
+          <hr>
+          <ng-template #ifblock>
+              <h5 class="card-header head ">titles</h5>
+              <div *ngFor="let i of  currentData.titles">
+                  <h5 class="card-title">{{i}}</h5>
+              </div>
+          </ng-template>
+         
+          </div>
+
+      </div>
+
+        
+        
+
+        <div class="card-body">
+            <div *ngIf="currentData.seats?.length>0"> 
+          <span *ngIf="currentData.seats[0]; then ifblock "></span>
+          <hr>
+          <ng-template #ifblock>
+              <h5 class="card-header head ">seats</h5>
+              <div *ngFor="let i of  currentData.seats">
+                  <h5 class="card-title">{{i}}</h5>
+              </div>
+          </ng-template>
+        
+          </div>
+
+      </div>
+
+
+        
+
+        
+              <div class="card-body">
+                    <div *ngIf="currentData.swornMembers?.length>0"> 
+                  <span *ngIf="currentData.swornMembers[0]; then ifblock "></span>
+                  <hr>
+                  <ng-template #ifblock>
+                      <h5 class="card-header head ">swornMembers</h5>
+                      <div *ngFor="let i of  currentData.swornMembers">
+                          <h5 class="card-title">{{i}}</h5>
+                      </div>
+                  </ng-template>
+                
+                  </div>
+
+                  
+
+              </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+      </div>
+
+    </div>
+  </div>
+</div>
