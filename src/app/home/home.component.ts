@@ -15,7 +15,7 @@ import {SortPipe} from '../sort.pipe';
 export class HomeComponent implements OnInit {
 
  
-
+  public view;
   public allcharactersdata:any=[];
   public allbookdata:any=[];
   public allhousesdata:any=[];
